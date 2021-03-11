@@ -1,16 +1,13 @@
-# Temporarily out of commision while testing
+# Temporarily out of commission while testing
+from flask import Flask#,render_template
 
+app = Flask(__name__)
 
-# import os
-
-# from flask import Flask,render_template
-
-# app = Flask(__name__)
-
-# # Home route
-# @app.route('/')
-# def Home():
-#     return render_template('index.html', title='Home')
+# Home route
+@app.route('/')
+def Home():
+    return "<h1>It works</h1>"
+    # return render_template('index.html', title='Home')
     
 # # Front Room route
 # @app.route('/front-room')
