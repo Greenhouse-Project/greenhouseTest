@@ -8,7 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://hmcjtyhcsvdyvp:ae7e4a3535fa0
 
 db = SQLAlchemy(app)
 
-class Plants(db.model):
+class Plants(db.Model):
     __tablename__ = "greenhouse"
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plant_species = db.Column(db.String(100), nullable=False)
