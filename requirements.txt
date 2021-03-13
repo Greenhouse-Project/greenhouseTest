@@ -10,3 +10,4 @@ Flask-SQLAlchemy==2.4.4
 psycopg2==2.8.6
 WTForms==2.3.3
 decouple==0.0.7
+flask_wtf==21.0.1
