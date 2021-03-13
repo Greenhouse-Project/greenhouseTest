@@ -34,7 +34,7 @@ class Plants(db.Model):
     temp = db.Column(db.String(100), nullable=False)
     humidity = db.Column(db.String(100), nullable=False)
     soil_moisture = db.Column(db.String(100), nullable=False)
-    bed = db.Column(db.Interger)
+    bed = db.Column(db.Interger, primary_key=False, autoincrement= False)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
