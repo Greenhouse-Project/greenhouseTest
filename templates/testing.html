@@ -5,18 +5,8 @@
 <div class="container">
     <h2>Flask Test Web Form</h2>
     <form action="" method="post" role="form">
-        { { form.csrf }}
+        <!-- { { form.csrf }} -->
         <div class="form-group">
-            <!-- 
-                owner = TextField('Owner: ', validators=[validators.required()])
-                plant_species = TextField('Plant Species: ', validators=[validators.required()])
-                date_finish = TextField('Date Finished: ', validators=[validators.required()])
-                last_watered = TextField('Last Watered: ', validators=[validators.required()])
-                owner = TextField('Date PLanted: ', validators=[validators.required()])
-                temp = TextField('Temperature: ', validators=[validators.required()])
-                humidity = TextField('Humidity: ', validators=[validators.required()])
-                soil_moisture = TextField('Soil Moisture: ', validators=[validators.required()])
-                bed = TextField('Bed Number: -->
             <label for="owner">Owner:</label>
             <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?">
             <br>

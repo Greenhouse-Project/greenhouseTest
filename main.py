@@ -25,7 +25,6 @@ class ReusableForm(Form):
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
-    _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plant_species = db.Column(db.String(100), nullable=False)
     owner = db.Column(db.String(100), nullable=False)
     date_planted = db.Column(db.String(100), nullable=False)
@@ -34,7 +33,7 @@ class Plants(db.Model):
     temp = db.Column(db.String(100), nullable=False)
     humidity = db.Column(db.String(100), nullable=False)
     soil_moisture = db.Column(db.String(100), nullable=False)
-    bed = db.Column(db.String(100), nullable=False)
+    bed = db.Column(db.Integer, primary_key=True, autoincrement=False)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
