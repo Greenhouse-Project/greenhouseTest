@@ -25,7 +25,7 @@ class ReusableForm(Form):
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
-    _id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+    _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plant_species = db.Column(db.String(100), nullable=False)
     owner = db.Column(db.String(100), nullable=False)
     date_planted = db.Column(db.String(100), nullable=False)
