@@ -1,1 +1,68 @@
-<h1> Testing Page is up</h1>
+<title>Reusable Form Demo</title>
+<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+    <h2>Flask Test Web Form</h2>
+    <form action="" method="post" role="form">
+        { { form.csrf }}
+        <div class="form-group">
+            <!-- 
+                owner = TextField('Owner: ', validators=[validators.required()])
+                plant_species = TextField('Plant Species: ', validators=[validators.required()])
+                date_finish = TextField('Date Finished: ', validators=[validators.required()])
+                last_watered = TextField('Last Watered: ', validators=[validators.required()])
+                owner = TextField('Date PLanted: ', validators=[validators.required()])
+                temp = TextField('Temperature: ', validators=[validators.required()])
+                humidity = TextField('Humidity: ', validators=[validators.required()])
+                soil_moisture = TextField('Soil Moisture: ', validators=[validators.required()])
+                bed = TextField('Bed Number: -->
+            <label for="owner">Owner:</label>
+            <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?">
+            <br>
+            <label for="plant_species">Plant Species:</label>
+            <input type="text" class="form-control" id="plant_species" name="plant_species"
+                placeholder="Plant">
+            <br>
+            <label for="date_finish">Germination Date:</label>
+            <input type="text" class="form-control" id="date_finish" name="date_finish" placeholder="">
+            <br>
+            <label for="date_planted">Date Planted:</label>
+            <input type="text" class="form-control" id="date_planted" name="date_planted" placeholder="">
+            <br>
+            <label for="temp">Current Temperature:</labshel>
+            <input type="text" class="form-control" id="temp" name="temp" placeholder="">
+            <br>
+            <label for="humidity">Current Humidity:</label>
+            <input type="text" class="form-control" id="humidity" name="humidity" placeholder="">
+            <br>
+            <label for="soil_moisture">Soil Moisture:</label>
+            <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" placeholder="">
+            <br>
+            <label for="bed">Bed Number:</label>
+            <input type="text" class="form-control" id="bed" name="bed" placeholder="">
+            <br>
+            <label for="last_watered">Last Watered:</label>
+            <input type="text" class="form-control" id="last_watered" name="last_watered" placeholder="">
+
+        </div>
+        <button type="submit" class="btn btn-success">Plant It!</button>
+    </form>{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+    {% for message in messages %}
+    {% if "Error" not in message[1]: %}
+    <div class="alert alert-info">
+        <strong>Success! </strong> { { message[1] }}
+    </div>
+    {% endif %}
+
+    {% if "Error" in message[1]: %}
+    <div class="alert alert-warning">
+        { { message[1] }}</div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+</div>
