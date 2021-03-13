@@ -31,3 +31,8 @@ def Outside():
 def About():
     return 'The About page is working'
 #     return render_template('TBD', title='About')
+
+# Testing page for forms
+@app.route('/testing')
+def Testing():
+    return render_template('testing.html', title='Testing')
