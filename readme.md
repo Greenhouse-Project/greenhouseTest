@@ -28,3 +28,7 @@ For Windows:
 3. `git push`
 4. `git push heroku master`
 5. `heroku open`
+
+## Accessing database
+
+`heroku psql`
