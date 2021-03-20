@@ -67,7 +67,7 @@ def About():
 
 # Testing page for forms
 @app.route('/bed-form', methods = ["GET", "POST"])
-def Testing():
+def bedForm():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit
         data= request.form # data from the form
