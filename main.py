@@ -66,7 +66,7 @@ def About():
 #     return render_template('TBD', title='About')
 
 # Testing page for forms
-@app.route('/bed-form', methods = ["GET", "POST"])
+@app.route('/form', methods = ["GET", "POST"])
 def bedForm():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit
