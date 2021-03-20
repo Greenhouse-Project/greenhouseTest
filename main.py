@@ -66,7 +66,7 @@ def About():
 #     return render_template('TBD', title='About')
 
 # Testing page for forms
-@app.route('/testing', methods = ["GET", "POST"])
+@app.route('/bed-form', methods = ["GET", "POST"])
 def Testing():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit
@@ -90,4 +90,4 @@ def Testing():
         flash('Hello ' + form)
     else:
         flash('All form fields are required')
-    return render_template('testing.html',form = form, title='Testing') 
+    return render_template('BedForm.html',form = form, title='Bed Form') 
