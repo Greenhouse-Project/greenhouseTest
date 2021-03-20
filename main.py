@@ -85,7 +85,7 @@ def bedForm():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('testing.html', user_data = user_data)
+        return render_template('BedForm.html', user_data = user_data)
     if form.validate():
         flash('Hello ' + form)
     else:
