@@ -85,6 +85,6 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('form.html', user_data = user_data)
+        return render_template('form.html', user_data = user_data, form = form, title='Plant form')
     else:
-        return render_template('form.html',form = form, title='Plant form') 
+        return render_template('index.html') 
