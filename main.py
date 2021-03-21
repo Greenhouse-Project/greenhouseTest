@@ -66,7 +66,7 @@ def About():
 #     return render_template('TBD', title='About')
 
 # Testing page for forms
-@app.route('/testing', methods = ["GET", "POST"])
+@app.route('/form', methods = ["GET", "POST"])
 def Testing():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit
@@ -85,9 +85,9 @@ def Testing():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('testing.html', user_data = user_data)
+        return render_template('form.html', user_data = user_data)
     if form.validate():
         flash('Hello ' + form)
     else:
         flash('All form fields are required')
-    return render_template('testing.html',form = form, title='Testing') 
+    return render_template('form.html',form = form, title='Plant form') 
