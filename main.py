@@ -25,7 +25,7 @@ class ReusableForm(Form):
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
-    _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    _id = db.Column(db.Integer, primary_key=True)
     plant_species = db.Column(db.String(100), nullable=False)
     owner = db.Column(db.String(100), nullable=False)
     date_planted = db.Column(db.String(100), nullable=False)
@@ -34,7 +34,7 @@ class Plants(db.Model):
     temp = db.Column(db.String(100), nullable=False)
     humidity = db.Column(db.String(100), nullable=False)
     soil_moisture = db.Column(db.String(100), nullable=False)
-    bed = db.Column(db.String(100), nullable=False)
+    bed = db.Column(db.String(100), nullable=False, primary_key=True)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
@@ -65,9 +65,9 @@ def About():
     return 'The About page is working'
 #     return render_template('TBD', title='About')
 
-# Testing page for forms
-@app.route('/testing', methods = ["GET", "POST"])
-def Testing():
+# Page for forms
+@app.route('/form', methods = ["GET", "POST"])
+def form():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit
         data= request.form # data from the form
@@ -85,9 +85,6 @@ def Testing():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('testing.html', user_data = user_data)
-    if form.validate():
-        flash('Hello ' + form)
+        return render_template('index.html')
     else:
-        flash('All form fields are required')
-    return render_template('testing.html',form = form, title='Testing') 
+        return render_template('form.html',form = form, title='Plant form') 

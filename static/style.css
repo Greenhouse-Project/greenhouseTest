@@ -31,7 +31,7 @@ section {
 
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.863)),
-    url(/static/img/greenhouse-main.jpg);
+    url(img/greenhouse-main.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh; /*1 100vh is 100% of the viewport */
@@ -235,11 +235,11 @@ h3 {
 }
 
 .grid-item {
-  width: 150px;
-  height: 100px;
+  /* width: 150px;
+    height: 100px; */
   border: 2px ridge rgb(119, 74, 32);
-  background-image: url(/static/img/bed-section.png);
-  background-size: 150px 100px;
+  /* background-image: url(/img/bed-section-2.png);
+    background-size: 100% 100%; */
   transform: scale(1);
   transition: transform 0.5s, opacity 0.5s;
 }
