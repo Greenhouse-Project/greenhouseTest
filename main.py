@@ -28,13 +28,13 @@ class Plants(db.Model):
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     plant_species = db.Column(db.String(100), nullable=False)
     owner = db.Column(db.String(100), nullable=False)
-    date_planted = db.Column(db.String(100), nullable=False)
-    date_finish = db.Column(db.String(100), nullable=False)
-    last_watered = db.Column(db.String(100), nullable=False)
-    temp = db.Column(db.String(100), nullable=False)
-    humidity = db.Column(db.String(100), nullable=False)
-    soil_moisture = db.Column(db.String(100), nullable=False)
-    bed = db.Column(db.String(100), nullable=False)
+    date_planted = db.Column(db.DateTime, nullable=False)
+    date_finish = db.Column(db.DateTime, nullable=False)
+    last_watered = db.Column(db.DateTime, nullable=False)
+    temp = db.Column(db.Integer, nullable=False)
+    humidity = db.Column(db.Float, nullable=False)
+    soil_moisture = db.Column(db.Integer, nullable=False)
+    bed = db.Column(db.Integer, nullable=False)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
