@@ -32,3 +32,4 @@ For Windows:
 ## Accessing database
 
 `heroku psql`
+`SELECT * FROM greenhouse` to see the current plant database
