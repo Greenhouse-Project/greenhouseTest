@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Planting Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../static/bedloader.js"></script>
 </head>
-
-
 <body>
     <h1>Add or update a plant below!</h1>
-    <form action="" method="post" role="form">
+    <form action="" method="post" role="form" id="main" name="main">
         <label for="owner">Owner:</label>
-        <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?">
+        <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?" autocomplete="given-name">
         <br>
         <label for="plant_species">Plant Species:</label>
-        <input type="text" class="form-control" id="plant_species" name="plant_species" placeholder="Plant">
+        <input type="text" class="form-control" id="plant_species" name="plant_species"
+            placeholder="Plant name">
         <br>
         <label for="date_finish">Germination Date:</label>
-        <input type="text" class="form-control" id="date_finish" name="date_finish" placeholder="">
+        <input type="date" class="form-control" id="date_finish" name="date_finish" placeholder="Harvest Date">
         <br>
         <label for="date_planted">Date Planted:</label>
-        <input type="text" class="form-control" id="date_planted" name="date_planted" placeholder="">
+        <input type="date" class="form-control" id="date_planted" name="date_planted" placeholder="When was it planted?" autocomplete="on">
         <br>
-        <label for="temp">Current Temperature:</label>
-        <input type="text" class="form-control" id="temp" name="temp" placeholder="">
+        <label for="temp">Current Temperature:</label>s
+        <input type="text" class="form-control" id="temp" name="temp" value="75 degrees" readonly="readonly">
         <br>
         <label for="humidity">Current Humidity:</label>
-        <input type="text" class="form-control" id="humidity" name="humidity" placeholder="">
+        <input type="text" class="form-control" id="humidity" name="humidity" value="45%" readonly="readonly">
         <br>
         <label for="soil_moisture">Soil Moisture:</label>
-        <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" placeholder="">
+        <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" value="moist" readonly="readonly">
         <br>
         <label for="bed">Bed Number:</label>
-        <input type="text" class="form-control" id="bed" name="bed" placeholder="">
+        <input type="number" class="form-control" name="bedPlot" id="bedPlot" value="0" readonly="readonly">
         <br>
         <label for="last_watered">Last Watered:</label>
-        <input type="text" class="form-control" id="last_watered" name="last_watered" placeholder="">
+        <input type="date" class="form-control" id="last_watered" name="last_watered">
         <br>
         <button type="submit" class="btn btn-success" onclick="planted()">Plant It!</button>
     </form>
 </body>
-
 </html>
