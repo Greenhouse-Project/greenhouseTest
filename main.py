@@ -85,6 +85,9 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('index.html')
+        return render_template('testing.html', user_data = user_data)
+    if form.validate():
+        flash('Hello ' + form)
     else:
-        return render_template('form.html',form = form, title='Plant form') 
+        flash('All form fields are required')
+    return render_template('testing.html',form = form, title='Testing') 
