@@ -12,7 +12,6 @@
     <div class="container">
         <h1>Add or update a plant below!</h1>
         <form action="" method="post" role="form">
-            <!-- { { form.csrf }} -->
             <div class="form-group">
                 <label for="owner">Owner:</label>
                 <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?">
@@ -27,22 +26,21 @@
                 <input type="text" class="form-control" id="date_planted" name="date_planted" placeholder="">
                 <br>
                 <label for="temp">Current Temperature:</label>
-                    <input type="text" class="form-control" id="temp" name="temp" placeholder="">
-                    <br>
-                    <label for="humidity">Current Humidity:</label>
-                    <input type="text" class="form-control" id="humidity" name="humidity" placeholder="">
-                    <br>
-                    <label for="soil_moisture">Soil Moisture:</label>
-                    <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" placeholder="">
-                    <br>
-                    <label for="bed">Bed Number:</label>
-                    <input type="text" class="form-control" id="bed" name="bed" placeholder="">
-                    <br>
-                    <label for="last_watered">Last Watered:</label>
-                    <input type="text" class="form-control" id="last_watered" name="last_watered" placeholder="">
-
+                <input type="text" class="form-control" id="temp" name="temp" placeholder="">
+                <br>
+                <label for="humidity">Current Humidity:</label>
+                <input type="text" class="form-control" id="humidity" name="humidity" placeholder="">
+                <br>
+                <label for="soil_moisture">Soil Moisture:</label>
+                <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" placeholder="">
+                <br>
+                <label for="bed">Bed Number:</label>
+                <input type="text" class="form-control" id="bed" name="bed" placeholder="">
+                <br>
+                <label for="last_watered">Last Watered:</label>
+                <input type="text" class="form-control" id="last_watered" name="last_watered" placeholder="">
             </div>
-            <button type="submit" class="btn btn-success">Plant It!</button>
+            <button type="submit" class="btn btn-success" onclick="planted()">Plant It!</button>
         </form>
     </div>
 </body>
