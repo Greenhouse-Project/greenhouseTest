@@ -31,9 +31,9 @@ class Plants(db.Model):
     date_planted = db.Column(db.String(100), nullable=False)
     date_finish = db.Column(db.String(100), nullable=False)
     last_watered = db.Column(db.String(100), nullable=False)
-    temp = db.Column(db.Integer, nullable=False)
-    humidity = db.Column(db.Float, nullable=False)
-    soil_moisture = db.Column(db.Integer, nullable=False)
+    temp = db.Column(db.String(100), nullable=False)
+    humidity = db.Column(db.String(100), nullable=False)
+    soil_moisture = db.Column(db.String(100), nullable=False)
     bed = db.Column(db.Integer, nullable=False, primary_key=True)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
@@ -85,6 +85,6 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('index.html')
+        return render_template('form.html', user_data = user_data)
     else:
-        return render_template('form.html', form = form, title='Plant form') 
+        return render_template('form.html',form = form, title='Plant form') 
