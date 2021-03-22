@@ -4,11 +4,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField
 
+# Creates Flask app
 app = Flask(__name__)
 
+# TODO:These credentials should be hidden
 app.secret_key='sfhjdhfjklhskjfhsd'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://hmcjtyhcsvdyvp:ae7e4a3535fa02d0a51c50d52357d7434b0ce16dd3d8caee2887adbce643d35c@ec2-54-159-175-113.compute-1.amazonaws.com:5432/d5s3splm4psiqk'
 
+# Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
 
 class ReusableForm(Form):
