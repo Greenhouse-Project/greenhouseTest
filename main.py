@@ -1,5 +1,4 @@
 import os 
-from boto.s3.connection import S3Connection
 from flask import Flask, config,render_template,request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -8,10 +7,8 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 # Creates Flask app
 app = Flask(__name__)
 
-s3 = S3Connection(os.environ['DATABASE_URL'])
-
-app.key= '68ki57j46h53tg2byn5gbt24y3n524'
-app.config['SQLALCHEMY_DATABASE_URI'] = s3
+app.key= os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
