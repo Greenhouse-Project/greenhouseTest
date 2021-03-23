@@ -15,6 +15,6 @@ function planted() {
     var plant = document.main.plant_species.value;
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
-    
-    // TODO: Would like to implement redirect to main page after this.
+    // Redirect to main page 
+    location.href = '/';
 }
