@@ -17,8 +17,11 @@ function planted() {
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
 }
-function Redirect() {
-    // Redirect to main page 
-    // Needs to be changed once Domain name is changed
-    window.location = 'https://nameless-garden-97935.herokuapp.com/';
+window.onload = function() {
+    document.getElementById("main").onsubmit = function () {
+        // Redirect to main page 
+        // Needs to be changed once Domain name is changed
+        window.location.replace('https://nameless-garden-97935.herokuapp.com/');
+        return false;
+    }
 }
