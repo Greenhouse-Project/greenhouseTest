@@ -1,5 +1,5 @@
 import os  
-import config
+import HerokuConfig
 from flask import Flask, config,render_template,request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -8,8 +8,8 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 # Creates Flask app
 app = Flask(__name__)
 
-app.secret_key= config.SECRET_KEY
-app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE
+app.secret_key= HerokuConfig.SECRECT_KEY
+app.config['SQLALCHEMY_DATABASE_URI'] = HerokuConfig.DATABASE
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
