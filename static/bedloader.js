@@ -15,6 +15,9 @@ function planted() {
     var plant = document.main.plant_species.value;
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
+    Redirect()
+}
+function Redirect() {
     // Redirect to main page 
     // Needs to be changed once Domain name is changed
     window.location = 'https://nameless-garden-97935.herokuapp.com/';
