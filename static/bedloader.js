@@ -17,5 +17,5 @@ function planted() {
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
     // Redirect to main page 
     // Needs to be changed once Domain name is changed
-    window.location.href = 'https://nameless-garden-97935.herokuapp.com/';
+    window.location = 'https://nameless-garden-97935.herokuapp.com/';
 }
