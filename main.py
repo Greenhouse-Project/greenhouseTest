@@ -1,5 +1,5 @@
-import os  
-import HerokuConfig
+import os 
+from boto.s3.connection import S3Connection
 from flask import Flask, config,render_template,request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -8,8 +8,8 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 # Creates Flask app
 app = Flask(__name__)
 
-app.secret_key= HerokuConfig.SECRECT_KEY
-app.config['SQLALCHEMY_DATABASE_URI'] = HerokuConfig.DATABASE
+app.secret_key= S3Connection(os.environ['SECRET_KEY'])
+app.config['SQLALCHEMY_DATABASE_URI'] = S3Connection(os.environ['DATABASE'])
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
