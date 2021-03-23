@@ -1,6 +1,6 @@
 //This function is called when the "Plant It!" button is clicked
-function planted() {
-    event.preventDefault();
+function planted(evt) {
+    evt.preventDefault();
     // Saves the query string on the end of the URL 
     // (URL www.blah.com/form?bed=100)
     const queryString = window.location.search;
@@ -14,12 +14,9 @@ function planted() {
     var name = document.main.owner.value;
     // Retrieves the plant name in the form
     var plant = document.main.plant_species.value;
-    Redirect();
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
-}
-function Redirect() {
     // Redirect to main page 
     // Needs to be changed once Domain name is changed
-    window.location.replace = 'https://nameless-garden-97935.herokuapp.com/';
+    window.location = '/';
 }
