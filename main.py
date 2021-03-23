@@ -8,8 +8,10 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 # Creates Flask app
 app = Flask(__name__)
 
+s3 = S3Connection(os.environ['DATABASE_URL'])
+
 app.key= '68ki57j46h53tg2byn5gbt24y3n524'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://hmcjtyhcsvdyvp:ae7e4a3535fa02d0a51c50d52357d7434b0ce16dd3d8caee2887adbce643d35c@ec2-54-159-175-113.compute-1.amazonaws.com:5432/d5s3splm4psiqk'
+app.config['SQLALCHEMY_DATABASE_URI'] = s3
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
