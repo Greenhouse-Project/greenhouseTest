@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 app.secret_key= 'yqurlfhkjbnqrhqfblu37yqo4f3giw3452'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
