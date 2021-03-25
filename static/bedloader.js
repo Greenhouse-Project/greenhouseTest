@@ -16,7 +16,6 @@ function planted() {
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
     // Redirect to main page 
-    // Needs to be changed once Domain name is changed
     // Also it is not working
-    window.location = '/';
+    // window.location = '/';
 }
