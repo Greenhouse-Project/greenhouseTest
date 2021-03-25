@@ -8,7 +8,7 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 app = Flask(__name__)
 
 app.secret_key= os.environ.get('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://nhjacblvnxqyid:85a84612e1f9d502dc5ca456dfc26dd96a387feb038141ef2be18e6dc4a2d0eb@ec2-54-159-175-113.compute-1.amazonaws.com:5432/d5s3splm4psiqk'
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
