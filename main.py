@@ -78,7 +78,7 @@ def Home():
 
 # Front route
 @app.route('/front')
-def Home():
+def Front():
     return render_template('front.html', title='Front')
 
 # # Back route
