@@ -76,10 +76,10 @@ class Plants(db.Model):
 def Home():
     return render_template('index.html', title='Home')
 
-# # Front route
-# @app.route('/front')
-# def Home():
-#     return render_template('front.html')
+# Front route
+@app.route('/front')
+def Home():
+    return render_template('front.html', title='Front')
 
 # # Back route
 # @app.route('/back')
