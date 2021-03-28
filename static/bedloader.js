@@ -11,11 +11,12 @@ function planted() {
     document.main.bed.value = bedNum;
     // Retrieves the name inserted in the form
     var name = document.main.owner.value;
+
+    var pass = document.main._password.value;
+    console.log(pass)
+
     // Retrieves the plant name in the form
     var plant = document.main.plant_species.value;
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
-    // Redirect to main page 
-    // Also it is not working
-    // window.location = '/';
 }
