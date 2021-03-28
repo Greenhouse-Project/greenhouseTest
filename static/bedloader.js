@@ -29,20 +29,20 @@ function planted() {
 
     // }
 // }
-const { Pool } = require('pg');
-const conn = new Pool({ connectionString: process.env.DATABASE_URL });
+// const { Pool } = require('pg');
+// const conn = new Pool({ connectionString: process.env.DATABASE_URL });
 
-// Not used
-async function displaytable(req, res) {
-    try {
-        const db = await conn.connect()
-        const result = await db.query('SELECT * FROM greenhouse')
-        const results = { greenhouse: (result) ? result.rows : null };
-        res.render('/form', results);
-        db.release();
-    } catch (err) {
-        console.error(err);
-        req.send("Error " + err);
-    }
+// // Not used
+// async function displaytable(req, res) {
+//     try {
+//         const db = await conn.connect()
+//         const result = await db.query('SELECT * FROM greenhouse')
+//         const results = { greenhouse: (result) ? result.rows : null };
+//         res.render('/form', results);
+//         db.release();
+//     } catch (err) {
+//         console.error(err);
+//         req.send("Error " + err);
+//     }
     
-}
+// }
