@@ -76,20 +76,20 @@ class Plants(db.Model):
 def Home():
     return render_template('index.html', title='Home')
 
-# Front route
-@app.route('/front')
-def Home():
-    return render_template('front.html')
+# # Front route
+# @app.route('/front')
+# def Home():
+#     return render_template('front.html')
 
-# Back route
-@app.route('/back')
-def Home():
-    return render_template('back.html')
+# # Back route
+# @app.route('/back')
+# def Home():
+#     return render_template('back.html')
 
-# Outside route
-@app.route('/outside')
-def Outside():
-    return render_template('outside.html')
+# # Outside route
+# @app.route('/outside')
+# def Outside():
+#     return render_template('outside.html')
     
 
 # Page for forms
