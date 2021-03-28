@@ -1,6 +1,5 @@
 import os 
 from flask import Flask, config,render_template,request, flash, redirect, url_for
-from typing_extensions import Required
 from werkzeug.wrappers import UserAgentMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -31,7 +30,7 @@ class ReusableForm(Form):
     humidity = TextField('Humidity: ', validators=[validators.required()])
     soil_moisture = TextField('Soil Moisture: ', validators=[validators.required()])
     bed = TextField('Bed Number: ', validators=[validators.required()])
-    password = PasswordField('Password', validators=[Required()])
+    password = PasswordField('Password', validators=[validators.required()])
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
