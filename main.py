@@ -3,7 +3,7 @@ from flask import Flask, config,render_template,request, flash, redirect, url_fo
 from werkzeug.wrappers import UserAgentMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from flask.ext.bcrypt import Bcrypt
+from flask_bcrypt import Bcrypt
 from sqlalchemy.ext.hybrid import hybrid_property
 from . import brcypt,db
 from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField, PasswordField
