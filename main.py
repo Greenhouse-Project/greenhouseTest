@@ -109,7 +109,7 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return redirect(url_for('/about'))
+        return redirect('/')
     # if form.validate_on_submit():
     #     user = Plants.query.filter_by(_password=form.usename.data).first_or_404()
     #     if user.is_correct_password(form.password.data):
