@@ -45,18 +45,18 @@ class Plants(db.Model):
     bed = db.Column(db.String(100), nullable=False, primary_key=True)
     _password = db.Column(db.String(128))
     
-    def is_correct_password(self, plaintext):
-        if bcrypt.check_password_hash(self._password, plaintext):
-            return True
-        return False
+    # def is_correct_password(self, plaintext):
+    #     if bcrypt.check_password_hash(self._password, plaintext):
+    #         return True
+    #     return False
     
     @hybrid_property
     def password(self):
         self._password
         
-    @password.setter
-    def _set_password(self, plaintext):
-        self._password = bcrypt.generate_password_hash(plaintext)
+    # @password.setter
+    # def _set_password(self, plaintext):
+    #     self._password = bcrypt.generate_password_hash(plaintext)
 
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password):
         self.plant_species = plant_species
@@ -103,16 +103,17 @@ def form():
         humidity = request.form['humidity']
         soil_moisture = request.form['soil_moisture']
         bed = request.form['bed']
-        new_data = Plants(plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed)
+        _password = request.form['_password']
+        new_data = Plants(plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password)
         db.session.add(new_data)
         db.session.commit()
         
         user_data = Plants.query.all()
         return redirect(url_for('/'))
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.usename.data).first_or_404()
-        if user.is_correct_password(form.password.data):
-            return True
-    else:
-        return redirect(url_for('/form'))
+    # if form.validate_on_submit():
+    #     user = Plants.query.filter_by(_password=form.usename.data).first_or_404()
+    #     if user.is_correct_password(form.password.data):
+    #         return True
+    # else:
+    #     return redirect(url_for('/form'))
     return render_template('testing.html',form = form, title='Planting Form') 
