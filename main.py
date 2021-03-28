@@ -1,12 +1,18 @@
 import os 
-from flask import Flask, config,render_template,request, flash
+from flask import Flask, config,render_template,request, flash, redirect, url_for
+from typing_extensions import Required
+from werkzeug.wrappers import UserAgentMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField
+from flask.ext.bcrypt import Bcrypt
+from sqlalchemy.ext.hybrid import hybrid_property
+from . import brcypt,db
+from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField, PasswordField
 
 # Creates Flask app
 app = Flask(__name__)
 app.config.from_object(__name__)
+bcrypt=Bcrypt(app)
 
 app.secret_key= 'yqurlfhkjbnqrhqfblu37yqo4f3giw3452'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
@@ -25,6 +31,7 @@ class ReusableForm(Form):
     humidity = TextField('Humidity: ', validators=[validators.required()])
     soil_moisture = TextField('Soil Moisture: ', validators=[validators.required()])
     bed = TextField('Bed Number: ', validators=[validators.required()])
+    password = PasswordField('Password', validators=[Required()])
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
@@ -38,8 +45,22 @@ class Plants(db.Model):
     humidity = db.Column(db.String(100), nullable=False)
     soil_moisture = db.Column(db.String(100), nullable=False)
     bed = db.Column(db.String(100), nullable=False, primary_key=True)
+    _password = db.Column(db.String(128))
+    
+    def is_correct_password(self, plaintext):
+        if bcrypt.check_password_hash(self._password, plaintext):
+            return True
+        return False
+    
+    @hybrid_property
+    def password(self):
+        self._password
+        
+    @password.setter
+    def _set_password(self, plaintext):
+        self._password = bcrypt.generate_password_hash(plaintext)
 
-    def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
+    def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password):
         self.plant_species = plant_species
         self.owner = owner
         self.date_planted = date_planted
@@ -49,6 +70,7 @@ class Plants(db.Model):
         self.humidity = humidity
         self.soil_moisture = soil_moisture
         self.bed = bed
+        self._password = _password
         
 
 # Home route
@@ -88,9 +110,11 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return render_template('testing.html', user_data = user_data)
-    if form.validate():
-        flash('Hello ' + form)
+        return redirect(url_for('/'))
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.usename.data).first_or_404()
+        if user.is_correct_password(form.password.data):
+            return True
     else:
-        flash('All form fields are required')
+        return redirect(url_for('/form'))
     return render_template('testing.html',form = form, title='Planting Form') 
