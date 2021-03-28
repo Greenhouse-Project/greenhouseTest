@@ -116,4 +116,4 @@ def form():
     #         return True
     # else:
     #     return redirect(url_for('/form'))
-    return render_template('testing.html',form = form, title='Planting Form') 
+    return render_template('form.html',form = form, title='Planting Form') 
