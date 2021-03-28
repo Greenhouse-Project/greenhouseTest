@@ -74,22 +74,22 @@ class Plants(db.Model):
 # Home route
 @app.route('/')
 def Home():
-    return render_template('index2.html', title='Home')
+    return render_template('index.html', title='Home')
 
 # Front route
-@app.route('/front.html')
+@app.route('/front')
 def Home():
-    return render_template('/templates/front.html')
+    return render_template('front.html')
 
 # Back route
-@app.route('/back.html')
+@app.route('/back')
 def Home():
-    return render_template('/templates/back.html')
+    return render_template('back.html')
 
 # Outside route
-@app.route('/outside.html')
+@app.route('/outside')
 def Outside():
-    return render_template('/templates/outside.html')
+    return render_template('outside.html')
     
 
 # Page for forms
@@ -120,4 +120,4 @@ def form():
     #         return True
     # else:
     #     return redirect(url_for('/form'))
-    return render_template('form.html',form = form, title='Planting Form') 
+    return render_template('testing.html',form = form, title='Planting Form') 
