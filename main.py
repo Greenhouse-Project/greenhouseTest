@@ -81,15 +81,15 @@ def Home():
 def Front():
     return render_template('front.html', title='Front')
 
-# # Back route
-# @app.route('/back')
-# def Home():
-#     return render_template('back.html')
+# Back route
+@app.route('/back')
+def Back():
+    return render_template('back.html')
 
-# # Outside route
-# @app.route('/outside')
-# def Outside():
-#     return render_template('outside.html')
+# Outside route
+@app.route('/outside')
+def Outside():
+    return render_template('outside.html')
     
 
 # Page for forms
