@@ -74,7 +74,7 @@ class Plants(db.Model):
 # Home route
 @app.route('/')
 def Home():
-    return render_template('/templates/index.html', title='Home')
+    return render_template('index2.html', title='Home')
 
 # Front route
 @app.route('/front.html')
