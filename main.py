@@ -72,7 +72,7 @@ class Plants(db.Model):
         
 
 # Home route
-@app.route('/home')
+@app.route('/')
 def Home():
     return render_template('index.html', title='Home')
 
@@ -109,7 +109,7 @@ def form():
         db.session.commit()
         
         user_data = Plants.query.all()
-        return redirect(url_for('/home'))
+        return redirect(url_for('/about'))
     # if form.validate_on_submit():
     #     user = Plants.query.filter_by(_password=form.usename.data).first_or_404()
     #     if user.is_correct_password(form.password.data):
