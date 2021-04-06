@@ -1,5 +1,5 @@
 import os 
-from flask import Flask, config,render_template,request, flash, redirect, url_for
+from flask import Flask, config,render_template,request, flash, redirect, url_for, jsonify
 from werkzeug.wrappers import UserAgentMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -95,6 +95,13 @@ def Back():
 def Outside():
     return render_template('outside.html')
     
+@app.route('/bed-contents/<id_>')
+def contents(id_):
+    try:
+        bed = Plants.query.filter_by(id=id_).last()
+        return jsonify(bed.serialize())
+    except Exception as e:
+        return(str(e))
 
 # Page for forms
 @app.route('/form', methods = ["GET", "POST"])
