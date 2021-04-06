@@ -98,7 +98,7 @@ def Outside():
 @app.route('/bed-contents/<id_>')
 def contents(id_):
     try:
-        bed = Plants.query.filter_by(id=id_).last()
+        bed = Plants.query.filter_by(id=id_).first()
         return jsonify(bed.serialize())
     except Exception as e:
         return(str(e))
