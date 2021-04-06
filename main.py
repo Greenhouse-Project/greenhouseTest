@@ -74,6 +74,17 @@ class Plants(db.Model):
         self.bed = bed
         self._password = _password
         
+    def serialize(self):
+        return{
+            'id': self._id,
+            'bed': self.bed,
+            'name': self.owner,
+            'plant': self.plant_species,
+            'date_planted': self.date_planted,
+            'date_finished': self.date_finish,
+            'last_watered' : self.last_watered
+        }
+        
 
 # Home route
 @app.route('/')
