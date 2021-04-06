@@ -106,20 +106,21 @@ def Back():
 def Outside():
     return render_template('outside.html')
 
-@app.route('/bed-contents')
-def contents():
-    try:
-        bed = Plants.query.all()
-        return jsonify([e.serialize() for e in bed])
-    except Exception as e:
-        return(str(e))    
-# @app.route('/bed-contents/<id_>')
-# def contents(id_):
+# @app.route('/bed-contents')
+# def contents():
 #     try:
-#         bed = Plants.query.filter_by(id=id_).first()
-#         return jsonify(bed.serialize())
+#         bed = Plants.query.all()
+#         return jsonify([e.serialize() for e in bed])
 #     except Exception as e:
-#         return(str(e))
+#         return(str(e))    
+    
+@app.route('/bed-contents/<id_>')
+def contents(id_):
+    try:
+        bed = Plants.query.filter_by(id=id_).first()
+        return jsonify(bed.serialize())
+    except Exception as e:
+        return(str(e))
 
 # Page for forms
 @app.route('/form', methods = ["GET", "POST"])
