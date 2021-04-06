@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from flask_bcrypt import Bcrypt
 from sqlalchemy.ext.hybrid import hybrid_property
+import psycopg2
 from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField, PasswordField
 
 # Creates Flask app
@@ -12,11 +13,14 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 bcrypt=Bcrypt(app)
 
-app.secret_key= 'yqurlfhkjbnqrhqfblu37yqo4f3giw3452'
+app.secret_key= os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+DATABASE_URL = os.environ['DATABASE_URL']
 
 # Creates database using SQLAlchemy in the app
 db = SQLAlchemy(app)
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 class ReusableForm(Form):
     owner = TextField('Owner: ', validators=[validators.required()])
