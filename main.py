@@ -3,7 +3,7 @@ from flask import Flask, config,render_template,request, flash, redirect, url_fo
 from werkzeug.wrappers import UserAgentMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from flask_bcrypt import Bcrypt
+
 from sqlalchemy.ext.hybrid import hybrid_property
 import psycopg2
 from wtforms import StringField, Form,validators, TextField, TextAreaField, SubmitField, PasswordField
@@ -11,7 +11,6 @@ from wtforms import StringField, Form,validators, TextField, TextAreaField, Subm
 # Creates Flask app
 app = Flask(__name__)
 app.config.from_object(__name__)
-bcrypt=Bcrypt(app)
 
 app.secret_key= os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
@@ -76,7 +75,6 @@ class Plants(db.Model):
         
     def serialize(self):
         return{
-            'id': self._id,
             'bed': self.bed,
             'name': self.owner,
             'plant': self.plant_species,
