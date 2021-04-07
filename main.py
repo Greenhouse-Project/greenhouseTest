@@ -108,7 +108,7 @@ def Outside():
 def contents(id_):
     try:
         bed = Plants.query.filter_by(bed=id_).order_by(Plants._id.desc()).first()
-        return render_template('bed-contents.html',bedNum=bed.bed, name=bed.owner, plant=bed.plant_species, date_planted=bed.date_planted, date_finished=bed.date_finished, last_watered=bed.last_watered)
+        return render_template('bed-contents.html',bedNum=bed.bed, name=bed.owner, plant=bed.plant_species, date_planted=bed.date_planted, date_finished=bed.date_finish, last_watered=bed.last_watered)
     except Exception as e:
         return(str(e))
 
