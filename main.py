@@ -102,21 +102,13 @@ def Back():
 # Outside route
 @app.route('/outside')
 def Outside():
-    return render_template('outside.html')
-
-# @app.route('/bed-contents')
-# def contents():
-#     try:
-#         bed = Plants.query.all()
-#         return jsonify([e.serialize() for e in bed])
-#     except Exception as e:
-#         return(str(e))    
+    return render_template('outside.html')  
     
 @app.route('/bed-contents/<id_>')
 def contents(id_):
     try:
         bed = Plants.query.filter_by(bed=id_).order_by(Plants._id.desc()).first()
-        return jsonify(bed.serialize())
+        return render_template('bed-contents.html',bed=bed.serialize())
     except Exception as e:
         return(str(e))
 
@@ -142,10 +134,4 @@ def form():
         
         user_data = Plants.query.all()
         return redirect('/')
-    # if form.validate_on_submit():
-    #     user = Plants.query.filter_by(_password=form.usename.data).first_or_404()
-    #     if user.is_correct_password(form.password.data):
-    #         return True
-    # else:
-    #     return redirect(url_for('/form'))
     return render_template('testing.html',form = form, title='Planting Form') 
