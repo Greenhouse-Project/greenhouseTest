@@ -52,10 +52,6 @@
     display: none;
   }
 
-  .item-box-of-3 {
-    /* padding-right: 50%; */
-  }
-
   .img-box-of-3 {
     margin-right: 10%;
     padding-right: 50%;
@@ -77,6 +73,14 @@
 
   .img-box-of-3 {
     margin-right: 30%;
+  }
+  .img-box-of-8 {
+    height: 50vh;
+  }
+  .photo {
+    height: auto;
+    max-height: 75%;
+    width: 100%;
   }
 }
 
@@ -204,4 +208,11 @@
     /* margin-left: -18%; */
     padding-right: 50%;
   }
+}
+
+/***************************/
+/*          HEIGHTS        */
+/***************************/
+
+@media only screen and (max-width: 280px) {
 }
