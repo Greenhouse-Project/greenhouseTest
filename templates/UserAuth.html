@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="shortcut icon" type="image/jpg" href="../static/img/greenhouseFavicon.png" />
-
+<script type="text/javascript" src="../static/bedloader.js"></script>
 <body>
-    <h3>Bed : {{bedNum}}</h3>
-    
-    <a id="toForm" href="/form?bed={{bedNum}}" title="Update Form">
+
+    <a id="toForm" onclick="getBedNum()" title="Update Form">
         <button>Update Form</button>
     </a>
 </body>
