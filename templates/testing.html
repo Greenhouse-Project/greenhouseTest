@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-
-
-
 <html>
-<link rel="shortcut icon" type="image/jpg" href="../static/img/greenhouseFavicon.png" />
+
 <head>
     <title>Planting Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,39 +8,44 @@
     <link rel="stylesheet" href="../static/formstyle.css">
 </head>
 
-
 <body>
-    <h1>Add or update a plant below!</h1>
-    <form action="" method="post" role="form" id="main" name="main">
-        <label for="owner">Owner:</label>
-        <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?">
-        <br>
-        <label for="plant_species">Plant Species:</label>
-        <input type="text" class="form-control" id="plant_species" name="plant_species" placeholder="Plant name">
-        <br>
-        <label for="date_finish">Germination Date:</label>
-        <input type="date" class="form-control" id="date_finish" name="date_finish">
-        <br>
-        <label for="date_planted">Date Planted:</label>
-        <input type="date" class="form-control" id="date_planted" name="date_planted">
-        <br>
-        <label for="temp">Current Temperature:</label>
-        <input type="text" class="form-control" id="temp" name="temp" value="75" readonly="readonly">
-        <br>
-        <label for="humidity">Current Humidity:</label>
-        <input type="text" class="form-control" id="humidity" name="humidity" value=".45" readonly="readonly">
-        <br>
-        <label for="soil_moisture">Soil Moisture:</label>
-        <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" value="moist" readonly="readonly">
-        <br>
-        <label for="bed">Bed Number:</label>
-        <input type="text" class="form-control" id="bed" name="bed" value="0" readonly="readonly">
-        <br>
-        <label for="last_watered">Last Watered:</label>
-        <input type="date" class="form-control" id="last_watered" name="last_watered" placeholder="">
-        <br>
-        <button type="submit" class="btn btn-success" onclick="planted()">Plant It!</button>
-    </form>
+    <section class="form-class">
+        <h1>Add or update a plant below!</h1>
+        <form action="" method="post" role="form" id="main" name="main">
+            <label for="owner" class="label">Owner:</label>
+            <input type="text" class="form-control" id="owner" name="owner" placeholder="What's your name?"
+                autocomplete="given-name">
+            <br>
+            <label for="plant_species" class="label">Plant Species:</label>
+            <input type="text" class="form-control" id="plant_species" name="plant_species" placeholder="Plant name">
+            <br>
+            <label for="date_finish" class="label">Germination Date:</label>
+            <input type="date" class="form-control" id="date_finish" name="date_finish" placeholder="Harvest Date">
+            <br>
+            <label for="date_planted" class="label">Date Planted:</label>
+            <input type="date" class="form-control" id="date_planted" name="date_planted"
+                placeholder="When was it planted?" autocomplete="on">
+            <br>
+            <label for="temp" class="label">Current Temperature:</label>
+            <input type="text" class="form-control" id="temp" name="temp" value="75 degrees" readonly="readonly">
+            <br>
+            <label for="humidity" class="label">Current Humidity:</label>
+            <input type="text" class="form-control" id="humidity" name="humidity" value="45%" readonly="readonly">
+            <br>
+            <label for="soil_moisture" class="label">Soil Moisture:</label>
+            <input type="text" class="form-control" id="soil_moisture" name="soil_moisture" value="moist"
+                readonly="readonly">
+            <br>
+            <label for="bed" class="label">Bed Number:</label>
+            <input type="number" class="form-control" name="bedPlot" id="bedPlot" value="0" readonly="readonly">
+            <br>
+            <label for="last_watered" class="label">Last Watered:</label>
+            <input type="date" class="form-control" id="last_watered" name="last_watered">
+            <br>
+            <button type="submit" class="btn-success" onclick="planted()">Plant It!</button>
+        </form>
+
+    </section>
 </body>
 
 </html>
