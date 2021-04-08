@@ -18,4 +18,5 @@ function setAttributes(next, attrs){
 }
 
 function click(e) {
-    e.target.classList.add("open-present")
+    e.target.classList.add("open-present");
+}
