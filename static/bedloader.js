@@ -17,32 +17,3 @@ function planted() {
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
 }
-// compare used password to db password
-// function checkPass() {
-//     var pass = document.main._password.value;
-//     const db = process.env.DATABASE_URL
-
-//     try {
-        
-    // } catch (err) {
-    //     console.error(err);
-
-    // }
-// }
-// const { Pool } = require('pg');
-// const conn = new Pool({ connectionString: process.env.DATABASE_URL });
-
-// // Not used
-// async function displaytable(req, res) {
-//     try {
-//         const db = await conn.connect()
-//         const result = await db.query('SELECT * FROM greenhouse')
-//         const results = { greenhouse: (result) ? result.rows : null };
-//         res.render('/form', results);
-//         db.release();
-//     } catch (err) {
-//         console.error(err);
-//         req.send("Error " + err);
-//     }
-    
-// }

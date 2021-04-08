@@ -103,6 +103,10 @@ def Back():
 @app.route('/outside')
 def Outside():
     return render_template('outside.html')  
+
+@app.route('/auth')
+def auth():
+    return render_template('UserAuth.html')
     
 @app.route('/bed-contents/<id_>')
 def contents(id_):
