@@ -103,6 +103,7 @@ def Outside():
 
 @app.route('/auth', methods=["POST"])
 def auth():
+    render_template('UserAuth.html')
     name = request.form['name']
     password = request.form['password']
     
