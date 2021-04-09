@@ -1,6 +1,9 @@
 import os 
 from flask import Flask, config,render_template,request, flash, redirect, url_for, jsonify
+from typing_extensions import Required
+from flask_login import login_required, current_user
 from werkzeug.wrappers import UserAgentMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 
@@ -46,19 +49,11 @@ class Plants(db.Model):
     soil_moisture = db.Column(db.String(100), nullable=False)
     bed = db.Column(db.String(100), nullable=False, primary_key=True)
     
-    # def is_correct_password(self, plaintext):
-    #     if bcrypt.check_password_hash(self._password, plaintext):
-    #         return True
-    #     return False
     
     @hybrid_property
     def password(self):
         self._password
-        
-    # @password.setter
-    # def _set_password(self, plaintext):
-    #     self._password = bcrypt.generate_password_hash(plaintext)
-
+    
     def __init__(self, plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password):
         self.plant_species = plant_species
         self.owner = owner
@@ -86,6 +81,7 @@ class User(db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
 
+
 # Home route
 @app.route('/')
 def Home():
@@ -106,9 +102,18 @@ def Back():
 def Outside():
     return render_template('outside.html')  
 
-@app.route('/auth')
+@app.route('/auth', methods=['POST'])
 def auth():
-    return render_template('UserAuth.html')
+    name = request.form.get('name')
+    password = request.form.get('password')
+    
+    user = User.query.filter_by(name=name).first()
+    
+    if not user or not check_password_hash(user.password, password):
+        flash('Incorrect login. Please try again.')
+        return render_template('UserAuth.html')
+    
+    return redirect('/form')
     
 @app.route('/bed-contents/<id_>')
 def contents(id_):
@@ -123,6 +128,7 @@ def contents(id_):
 
 # Page for forms
 @app.route('/form', methods = ["GET", "POST"])
+@login_required
 def form():
     form = ReusableForm(request.form)
     if request.method == 'POST': # submit

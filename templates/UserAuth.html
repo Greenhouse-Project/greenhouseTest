@@ -3,10 +3,35 @@
 <link rel="shortcut icon" type="image/jpg" href="../static/img/greenhouseFavicon.png" />
 <script type="text/javascript" src="../static/bedloader.js"></script>
 <body>
-    <input id="password" class="password" type="password" name="password" placeholder="Your Password">
+    <div class="column is-4 is-offset-4">
+        <h3 class="title">Login</h3>
+        <div class="box">
+            <form method="POST" action="/auth">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="name" name="name" placeholder="Username" autofocus="">
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- <input id="password" class="password" type="password" name="password" placeholder="Your Password">
     <a id="toForm" onclick="getBedNum()" title="Update Form">
         <button>Update Form</button>
-    </a>
+    </a> -->
 </body>
 
 </html>
