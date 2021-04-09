@@ -101,7 +101,7 @@ def Back():
 def Outside():
     return render_template('outside.html')  
 
-@app.route('/auth', methods=['POST'])
+@app.route('/auth', methods=["POST"])
 def auth():
     name = request.form.get('name')
     password = request.form.get('password')
