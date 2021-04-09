@@ -3,6 +3,9 @@
 <link rel="shortcut icon" type="image/jpg" href="../static/img/greenhouseFavicon.png" />
 <script type="text/javascript" src="../static/bedloader.js"></script>
 <body>
+    <p>
+        {{user}} {{password}}
+    </p>
     <section class="form-class">
         <h1>Please login:</h1>
         <form action="" method="post" role="form" id="main" name="main">
@@ -11,7 +14,7 @@
                 autocomplete="given-name">
             <br>
             <label for="password" class="label">Password:</label>
-            <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             <br>
             <button type="submit" class="btn-success">Submit</button>
         </form>
