@@ -32,7 +32,6 @@ class ReusableForm(Form):
     humidity = TextField('Humidity: ', validators=[validators.required()])
     soil_moisture = TextField('Soil Moisture: ', validators=[validators.required()])
     bed = TextField('Bed Number: ', validators=[validators.required()])
-    password = PasswordField('Password', validators=[validators.required()])
     
 class Plants(db.Model):
     __tablename__ = "greenhouse"
@@ -46,7 +45,6 @@ class Plants(db.Model):
     humidity = db.Column(db.String(100), nullable=False)
     soil_moisture = db.Column(db.String(100), nullable=False)
     bed = db.Column(db.String(100), nullable=False, primary_key=True)
-    _password = db.Column(db.String(128))
     
     # def is_correct_password(self, plaintext):
     #     if bcrypt.check_password_hash(self._password, plaintext):
@@ -71,7 +69,6 @@ class Plants(db.Model):
         self.humidity = humidity
         self.soil_moisture = soil_moisture
         self.bed = bed
-        self._password = _password
         
     def serialize(self):
         return{
@@ -83,6 +80,10 @@ class Plants(db.Model):
             'last_watered' : self.last_watered
         }
         
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(100))
 
 # Home route
 @app.route('/')
@@ -134,8 +135,7 @@ def form():
         humidity = request.form['humidity']
         soil_moisture = request.form['soil_moisture']
         bed = request.form['bed']
-        _password = request.form['_password']
-        new_data = Plants(plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password)
+        new_data = Plants(plant_species, owner,date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed)
         db.session.add(new_data)
         db.session.commit()
         
