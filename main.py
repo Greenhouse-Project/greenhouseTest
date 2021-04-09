@@ -81,6 +81,7 @@ class Plants(db.Model):
         }
         
 class User(db.Model):
+    __tablename__ = "userCred"
     id = db.Column(db.Integer, primary_key=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
