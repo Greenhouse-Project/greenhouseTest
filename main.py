@@ -101,16 +101,19 @@ def Back():
 def Outside():
     return render_template('outside.html')  
 
-@app.route('/auth', methods=["POST"])
+@app.route('/auth', methods = ["GET","POST"])
 def auth():
-    # name = request.form['name']
-    # password = request.form['password']
-    
-    # user = User.query.filter_by(name=name).first()
-    
-    # if not user or not check_password_hash(user.password, password):
-    #     flash('Incorrect login. Please try again.')
-    #     return render_template('UserAuth.html')
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
+        
+        user = User.query.filter_by(name=name).first()
+        
+        if not user or not check_password_hash(user.password, password):
+            flash('Incorrect login. Please try again.')
+            return render_template('UserAuth.html')
+        
+        return redirect('/form')
     
     return render_template('UserAuth.html')
     
