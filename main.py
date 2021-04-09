@@ -1,6 +1,5 @@
 import os 
 from flask import Flask, config,render_template,request, flash, redirect, url_for, jsonify
-from typing_extensions import Required
 from flask_login import login_required, current_user
 from werkzeug.wrappers import UserAgentMixin
 from werkzeug.security import generate_password_hash, check_password_hash
