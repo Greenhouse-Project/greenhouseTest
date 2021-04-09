@@ -110,9 +110,9 @@ def auth():
     
     if not user or not check_password_hash(user.password, password):
         flash('Incorrect login. Please try again.')
-        return render_template('UserAuth.html')
+        return redirect('/form')
     
-    return redirect('/form')
+    return render_template('UserAuth.html')
     
 @app.route('/bed-contents/<id_>')
 def contents(id_):
