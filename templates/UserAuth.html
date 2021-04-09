@@ -3,31 +3,19 @@
 <link rel="shortcut icon" type="image/jpg" href="../static/img/greenhouseFavicon.png" />
 <script type="text/javascript" src="../static/bedloader.js"></script>
 <body>
-    <div class="column is-4 is-offset-4">
-        <h3 class="title">Login</h3>
-        <div class="box">
-            <form method="POST" action="/auth">
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="name" name="name" placeholder="Username" autofocus="">
-                    </div>
-                </div>
-    
-                <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="password" name="password" placeholder="Your Password">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        Remember me
-                    </label>
-                </div>
-                <button class="button is-block is-info is-large is-fullwidth">Login</button>
-            </form>
-        </div>
-    </div>
+    <section class="form-class">
+        <h1>Please login:</h1>
+        <form action="" method="post" role="form" id="main" name="main">
+            <label for="name" class="label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="What's your name?"
+                autocomplete="given-name">
+            <br>
+            <label for="password" class="label">Password:</label>
+            <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+            <br>
+            <button type="submit" class="btn-success">Submit</button>
+        </form>
+    </section>
     <!-- <input id="password" class="password" type="password" name="password" placeholder="Your Password">
     <a id="toForm" onclick="getBedNum()" title="Update Form">
         <button>Update Form</button>
