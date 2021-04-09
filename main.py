@@ -103,17 +103,16 @@ def Outside():
 
 @app.route('/auth', methods=["POST"])
 def auth():
-    render_template('UserAuth.html')
-    name = request.form['name']
-    password = request.form['password']
+    # name = request.form['name']
+    # password = request.form['password']
     
-    user = User.query.filter_by(name=name).first()
+    # user = User.query.filter_by(name=name).first()
     
-    if not user or not check_password_hash(user.password, password):
-        flash('Incorrect login. Please try again.')
-        return render_template('UserAuth.html')
+    # if not user or not check_password_hash(user.password, password):
+    #     flash('Incorrect login. Please try again.')
+    #     return render_template('UserAuth.html')
     
-    return redirect('/form')
+    return render_template('UserAuth.html')
     
 @app.route('/bed-contents/<id_>')
 def contents(id_):
