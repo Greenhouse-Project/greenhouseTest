@@ -127,6 +127,8 @@ def auth():
         user = User.query.filter_by(name=name).first()
 
         if user.password == hashword and user.name == name:
+            redirect('/form?bed=100')
+        else:
             pass
 
     return render_template('UserAuth.html')

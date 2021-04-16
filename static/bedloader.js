@@ -18,6 +18,5 @@ function getBedNum() {
     const urlParams = new URLSearchParams(queryString);
     // Looks for key ('bed') in urlParams
     const bedNum = new Number(urlParams.get('bed'));
-    var pass = document.password;
     window.location.href = "/form?bed=" + bedNum;
 }
