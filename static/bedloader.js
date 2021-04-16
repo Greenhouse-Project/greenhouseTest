@@ -23,7 +23,7 @@ function getBedNum() {
         // window.location.href = "/form?bed=" + bedNum;
     }
     if ("{{flash_message}}" == "False") {
-        location.reload()
+        // location.reload()
         alert("Incorrect Credentials")
     }
     
