@@ -127,9 +127,9 @@ def auth():
         user = User.query.filter_by(name=name).first()
 
         if user.password == hashword and user.name == name:
-            redirect('/form?bed=100')
+            return render_template('UserAuth.html', flash_message="True")
         else:
-            pass
+            return render_template('UserAuth.html', flash_message="False")
 
     return render_template('UserAuth.html')
 
