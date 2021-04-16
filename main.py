@@ -112,8 +112,8 @@ def auth():
         
         user = User.query.filter_by(name=name).first()
         
-        if not user or not check_password_hash(user.password, password):
-            return render_template('UserAuth.html', user=user, password=password)
+        if not user or not check_password_hash(user.password, hashword):
+            return render_template('UserAuth.html', user=user, hashword=password)
         
         return redirect('/form')
     
