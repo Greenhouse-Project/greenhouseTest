@@ -125,7 +125,7 @@ def auth():
         # hash password
         hashword = sha256(password.encode('utf-8')).hexdigest()
 
-        user = User.query.first()
+        user = User.query.filter_by(name=name).first()
 
         # if user.password == hashword and user.name == name:
         #     return redirect('/form')
