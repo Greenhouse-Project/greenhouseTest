@@ -129,7 +129,7 @@ def auth():
 
         # if user.password != hashword:
 
-        return render_template('UserAuth.html', user=user.name, userpass=user.password, hashword=password)
+        return render_template('UserAuth.html', user=user.name, userpass=user.password, password=hashword)
 
         # return redirect('/form')
 
