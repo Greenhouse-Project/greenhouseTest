@@ -127,9 +127,9 @@ def auth():
         user = User.query.filter_by(name=name).first()
 
         if user.password == hashword and user.name == name:
-            return render_template('UserAuthOther.html')
+            return form()
         else:
-            return render_template('UserAuth.html', incorrect="Incorrect Credentials")
+            return render_template('UserAuth.html')
 
     return render_template('UserAuth.html')
 
@@ -150,7 +150,6 @@ def contents(id_):
 
 
 @app.route('/form', methods=["GET", "POST"])
-@login_required
 def form():
     form = ReusableForm(request.form)
     if request.method == 'POST':  # submit
