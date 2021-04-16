@@ -5,6 +5,7 @@ from werkzeug.wrappers import UserAgentMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
+from hashlib import sha256
 
 from sqlalchemy.ext.hybrid import hybrid_property
 import psycopg2
@@ -106,11 +107,11 @@ def auth():
     if request.method == 'POST':
         name = request.form['name']
         password = request.form['password']
-        
+        #hash password
+        hashword = sha256(password.hexdigest())
         user = User.query.filter_by(name=name).first()
         
         if not user or not check_password_hash(user.password, password):
-            flash('Incorrect login. Please try again.')
             return render_template('UserAuth.html', user=user, password=password)
         
         return redirect('/form')
