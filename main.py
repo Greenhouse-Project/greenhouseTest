@@ -169,5 +169,5 @@ def form():
         db.session.commit()
 
         user_data = Plants.query.all()
-        return redirect('/')
+        # return redirect('/')
     return render_template('testing.html', form=form, title='Planting Form')

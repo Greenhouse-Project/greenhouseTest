@@ -13,6 +13,7 @@ function planted() {
     var name = document.main.owner.value;
     // Retrieves the plant name in the form
     var plant = document.main.plant_species.value;
+    window.location.href("/")
     // Returns a personalized message
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
 }
