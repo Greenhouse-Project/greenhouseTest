@@ -8,7 +8,7 @@ function planted() {
     // Looks for key ('bed') in urlParams
     const bedNum = new Number(urlParams.get('bed'));
     // edits on html DOCUMENT, in MAIN form, specifically the BED text to be the VALUE of url parameter (this case, 100)
-    document.main.bedPlot.value = bedNum;
+    document.main.bed.value = bedNum;
     // Retrieves the name inserted in the form
     var name = document.main.owner.value;
     // Retrieves the plant name in the form

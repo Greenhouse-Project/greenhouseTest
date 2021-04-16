@@ -162,7 +162,7 @@ def form():
         temp = request.form['temp']
         humidity = request.form['humidity']
         soil_moisture = request.form['soil_moisture']
-        bed = request.form['bedPlot']
+        bed = request.form['bed']
         new_data = Plants(plant_species, owner, date_planted, date_finish,
                           last_watered, temp, humidity, soil_moisture, bed)
         db.session.add(new_data)
