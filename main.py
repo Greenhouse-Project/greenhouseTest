@@ -119,18 +119,18 @@ def Outside():
 
 @app.route('/auth', methods=["GET", "POST"])
 def auth():
-    # if request.method == 'POST':
-    # name = request.form['name']
-    # password = request.form['password']
-    # hash password
-    # hashword = sha256(password.encode('utf-8')).hexdigest()
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
+        # hash password
+        hashword = sha256(password.encode('utf-8')).hexdigest()
+        user = User.query.filter_by(name=name).first()
 
-    # user = User.query.filter_by(name=name).first()
+        return render_template('UserAuth.html', user=user.name, userpass=user.password, password=hashword)
 
-    # if user.password == hashword and user.name == name:
-    #     return redirect('/form')
-    # return redirect('/form')
-    # return render_template('UserAuth.html')
+        # if user.password == hashword and user.name == name:
+        #     return redirect('/form')
+        # return render_template('UserAuth.html')
 
     return render_template('UserAuth.html')
 
