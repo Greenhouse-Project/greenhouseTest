@@ -61,7 +61,7 @@ class Plants(db.Model):
     def password(self):
         self._password
 
-    def __init__(self, plant_species, owner, date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed, _password):
+    def __init__(self, plant_species, owner, date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
         self.owner = owner
         self.date_planted = date_planted
