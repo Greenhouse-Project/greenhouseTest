@@ -128,6 +128,8 @@ def auth():
         if user is not None:
             if user.password == hashword and user.name == name:
                 return render_template('UserAuth.html', flash_message="True")
+            else:
+                return render_template('UserAuth.html', flash_message="False")
         else:
             return render_template('UserAuth.html', flash_message="False")
 
