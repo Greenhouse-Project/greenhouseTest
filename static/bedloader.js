@@ -21,5 +21,9 @@ function getBedNum() {
         const bedNum = new Number(urlParams.get('bed'));
         window.location.href = "/form?bed=" + bedNum;
     }
+    if ("{{ flash_message }}" == "False") {
+        location.reload()
+        alert("Incorrect Credentials")
+    }
     
 }
