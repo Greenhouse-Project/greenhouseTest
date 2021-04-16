@@ -120,8 +120,8 @@ def Outside():
 @app.route('/auth', methods=["GET", "POST"])
 def auth():
     if request.method == 'POST':
-        name = request.form['name']
-        password = request.form['password']
+        # name = request.form['name']
+        # password = request.form['password']
         # hash password
         # hashword = sha256(password.encode('utf-8')).hexdigest()
 
