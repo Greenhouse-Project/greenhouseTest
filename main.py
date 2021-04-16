@@ -125,11 +125,11 @@ def auth():
         # hash password
         hashword = sha256(password.encode('utf-8')).hexdigest()
         user = User.query.filter_by(name=name).first()
-
-        if user.password == hashword and (user.name == name or user.name.lower() == name):
-            return render_template('UserAuth.html', flash_message="True")
+        if user.password != None or user.name != None:
+            if user.password == hashword and user.name == name:
+                return render_template('UserAuth.html', flash_message="True")
         else:
-            return redirect('/')
+            return render_template('UserAuth.html', flash_message="False")
 
     return render_template('UserAuth.html')
 
