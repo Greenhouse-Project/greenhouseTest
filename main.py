@@ -128,7 +128,7 @@ def auth():
 
         if user.password == hashword and user.name == name:
             return render_template('UserAuth.html', flash_message="True")
-        else:
+        elif user.password != hashword or user.name != name:
             return render_template('UserAuth.html', flash_message="False")
 
     return render_template('UserAuth.html')

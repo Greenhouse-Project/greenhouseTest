@@ -11,7 +11,7 @@ function planted() {
     alert("Thanks " + name + " for planting " + plant + " in bed " + bedNum);
 }
 function getBedNum() {
-    if ("{{ flash_message }}" == "True") {
+    if ("{{flash_message}}" == "True") {
         alert("Correct Creddies")
         // // Saves the query string on the end of the URL 
         // // (URL www.blah.com/form?bed=100)
@@ -22,7 +22,7 @@ function getBedNum() {
         // const bedNum = new Number(urlParams.get('bed'));
         // window.location.href = "/form?bed=" + bedNum;
     }
-    if ("{{ flash_message }}" == "False") {
+    if ("{{flash_message}}" == "False") {
         location.reload()
         alert("Incorrect Credentials")
     }
