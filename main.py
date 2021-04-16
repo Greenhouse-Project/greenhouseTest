@@ -127,10 +127,11 @@ def auth():
 
         user = User.query.filter_by(name=name).first()
 
-        if user.password != hashword:
-            return render_template('UserAuth.html', user=user, hashword=password)
+        # if user.password != hashword:
 
-        return redirect('/form')
+        return render_template('UserAuth.html', user=user, hashword=password)
+
+        # return redirect('/form')
 
     return render_template('UserAuth.html')
 
