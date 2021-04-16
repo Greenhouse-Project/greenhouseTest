@@ -126,9 +126,11 @@ def auth():
         hashword = sha256(password.encode('utf-8')).hexdigest()
         user = User.query.filter_by(name=name).first()
 
-        return render_template('UserAuth.html', user=user.name, userpass=user.password, password=hashword)
+        if user.password == hashword and user.name == name:
+            return render_template('UserAuth.html', test="logged in")
 
-        # if user.password == hashword and user.name == name:
+        return render_template('UserAuth.html')
+
         #     return redirect('/form')
         # return render_template('UserAuth.html')
 
