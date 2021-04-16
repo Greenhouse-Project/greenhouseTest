@@ -133,7 +133,7 @@ def auth():
     # return render_template('UserAuth.html')
 
     # return render_template('UserAuth.html')
-    render_template('testing.html')
+    redirect('/form')
 
 
 @app.route('/bed-contents/<id_>')
