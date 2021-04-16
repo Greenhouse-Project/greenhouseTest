@@ -128,8 +128,6 @@ def auth():
 
         if user.password == hashword and user.name == name:
             pass
-        else:
-            return render_template('UserAuth.html')
 
     return render_template('UserAuth.html')
 
