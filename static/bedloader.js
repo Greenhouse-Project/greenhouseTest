@@ -12,14 +12,15 @@ function planted() {
 }
 function getBedNum() {
     if ("{{ flash_message }}" == "True") {
-        // Saves the query string on the end of the URL 
-        // (URL www.blah.com/form?bed=100)
-        const queryString = window.location.search;
-        // (urlParams = "?bed=100")
-        const urlParams = new URLSearchParams(queryString);
-        // Looks for key ('bed') in urlParams
-        const bedNum = new Number(urlParams.get('bed'));
-        window.location.href = "/form?bed=" + bedNum;
+        alert("Correct Creddies")
+        // // Saves the query string on the end of the URL 
+        // // (URL www.blah.com/form?bed=100)
+        // const queryString = window.location.search;
+        // // (urlParams = "?bed=100")
+        // const urlParams = new URLSearchParams(queryString);
+        // // Looks for key ('bed') in urlParams
+        // const bedNum = new Number(urlParams.get('bed'));
+        // window.location.href = "/form?bed=" + bedNum;
     }
     if ("{{ flash_message }}" == "False") {
         location.reload()
