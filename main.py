@@ -127,9 +127,9 @@ def auth():
         user = User.query.filter_by(name=name).first()
 
         if user.password == hashword and user.name == name:
-            return redirect('/')
-
-        return render_template('UserAuth.html', incorrect="Incorrect Credentials")
+            return render_template('UserAuthOther.html')
+        else:
+            return render_template('UserAuth.html', incorrect="Incorrect Credentials")
 
     return render_template('UserAuth.html')
 
