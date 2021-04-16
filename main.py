@@ -108,7 +108,8 @@ def auth():
         name = request.form['name']
         password = request.form['password']
         #hash password
-        hashword = sha256(password.hexdigest())
+        hashword = sha256(password.encode('utf-8')).hexdigest()
+        
         user = User.query.filter_by(name=name).first()
         
         if not user or not check_password_hash(user.password, password):
