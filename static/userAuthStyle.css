@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+html {
+  background-color: #fff;
+  color: rgb(219, 219, 219);
+  font-family: "Asap", sans-serif;
+  font-size: 23px;
+  text-rendering: optimizeLegibility;
+  align-items: center;
+  background-color: #465743;
+}
+
+body {
+  padding: 1.7em;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 6%;
+}
+
+.form-class {
+  margin: 0;
+  border: 15px solid #226924;
+  border-radius: 25px;
+  background-color: #465743;
+}
+
+h1 {
+  margin-left: 1%;
+  text-decoration: underline;
+}
+
+#main {
+  margin: 0;
+  padding: 3%;
+}
+
+.form-control {
+  float: right;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 25px;
+  background-color: rgb(219, 219, 219);
+}
+
+.form-control:hover {
+  background-color: #c0c0c0;
+}
+
+.label {
+  margin: 0;
+  float: left;
+}
+
+button {
+  margin-top: 10%;
+  float: left;
+  cursor: pointer;
+  color: rgb(219, 219, 219);
+  border: none;
+  background-color: #226924;
+  width: 100%;
+  font-size: x-large;
+  border-radius: 10px;
+  height: 50px;
+}
+
+button:hover {
+  background-color: #225224;
+}

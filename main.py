@@ -78,6 +78,7 @@ class Plants(db.Model):
         self.humidity = humidity
         self.soil_moisture = soil_moisture
         self.bed = bed
+
     # Function that is called to produce DB row in jsonify
 
     def serialize(self):
