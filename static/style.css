@@ -161,28 +161,20 @@ h3 {
   justify-content: center;
 }
 
-.photos {
-  padding: 0 0 0 0;
-}
-
-.img-box-of-2 {
-  display: inline-flex;
-  margin-left: 7%;
-  /* flex-flow: column wrap;  */
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding-top: 0%;
-  padding-right: 20%;
-}
-
-.item-box-of-3 {
+.item-box-of-6 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-left: 23%;
-  margin-right: 20%;
+}
+
+.item-box-of-2 {
+  padding-top: 2%;
+}
+
+.item-box-of-2 > div {
+  margin-right: 75px;
+  margin-left: 75px;
 }
 
 .img-box-of-3 {
@@ -240,20 +232,16 @@ h3 {
 }
 
 .grid-container {
-  margin: 18px 30px;
   display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* gap: 5px; */
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 100px 100px;
+  grid-gap: 0px;
   border: 10px solid rgb(124, 71, 3);
-  grid-auto-rows: auto;
 }
 
-.grid-item {
-  /* width: 150px;
-    height: 100px; */
+.grid-container > * {
   border: 2px ridge rgb(119, 74, 32);
-  /* background-image: url(/img/bed-section-2.png);
-    background-size: 100% 100%; */
+  background-color: rgba(177, 152, 122, 255);
   transform: scale(1);
   transition: transform 0.5s, opacity 0.5s;
 }
@@ -261,8 +249,4 @@ h3 {
 .grid-item:hover {
   opacity: 0.75;
   transform: scale(1);
-}
-
-.grid-item:active {
-  background-color: #000;
 }

@@ -1,3 +1,4 @@
+# Imports that are used for the app
 import os
 from flask import Flask, config, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
@@ -6,16 +7,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from hashlib import sha256
-
-from sqlalchemy.ext.hybrid import hybrid_property
 import psycopg2
 from wtforms import StringField, Form, validators, TextField, TextAreaField, SubmitField, PasswordField
 
 # Creates Flask app
 app = Flask(__name__)
 app.config.from_object(__name__)
-
+# Used to connect database on heroku to app
 app.secret_key = os.environ.get('SECRET_KEY')
+# The .replace() is used as a work around for heroku param error, not sure it it will be fixed on
+# herokus end. If so, remove the .replace
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL').replace("://", "ql://", 1)
 DATABASE_URL = os.environ['DATABASE_URL']
@@ -24,6 +25,10 @@ DATABASE_URL = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+'''
+This is the form used for the /form page and is called later in the code
+'''
 
 
 class ReusableForm(Form):
@@ -44,6 +49,11 @@ class ReusableForm(Form):
     bed = TextField('Bed Number: ', validators=[validators.required()])
 
 
+'''
+This is the structure that will be used in the database
+'''
+
+
 class Plants(db.Model):
     __tablename__ = "greenhouse"
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -57,10 +67,7 @@ class Plants(db.Model):
     soil_moisture = db.Column(db.String(100), nullable=False)
     bed = db.Column(db.String(100), nullable=False, primary_key=True)
 
-    @hybrid_property
-    def password(self):
-        self._password
-
+    # Called to initialize the DB
     def __init__(self, plant_species, owner, date_planted, date_finish, last_watered, temp, humidity, soil_moisture, bed):
         self.plant_species = plant_species
         self.owner = owner
@@ -71,6 +78,7 @@ class Plants(db.Model):
         self.humidity = humidity
         self.soil_moisture = soil_moisture
         self.bed = bed
+    # Function that is called to produce DB row in jsonify
 
     def serialize(self):
         return{
@@ -81,6 +89,8 @@ class Plants(db.Model):
             'date_finished': self.date_finish,
             'last_watered': self.last_watered
         }
+
+# Structure used for User DB
 
 
 class User(db.Model):
@@ -116,6 +126,8 @@ def Back():
 def Outside():
     return render_template('outside.html')
 
+# Used for the authentication page
+
 
 @app.route('/auth', methods=["GET", "POST"])
 def auth():
@@ -132,8 +144,9 @@ def auth():
                 return render_template('UserAuth.html', flash_message="False")
         else:
             return render_template('UserAuth.html', flash_message="False")
-
     return render_template('UserAuth.html')
+
+# Used for the bed contects page
 
 
 @app.route('/bed-contents/<id_>')
