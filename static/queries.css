@@ -2,284 +2,336 @@
 /*          WIDTHS         */
 /***************************/
 
-@media only screen and (max-width: 2560px) {
-  .hero-text-box {
-    margin-top: -4%;
-  }
+@media only screen and (max-width: 2560px){
+    .hero-text-box{
+        margin-top: -4%;
+    }
 
-  .item-box-of-3 {
-    margin-right: 14%;
-  }
+    .item-box-of-3{
+        margin-right: 14%;
+    }
 }
 
-@media only screen and (max-width: 1920px) {
-  .item-box-of-2 > div {
-    margin-right: 50px;
-    margin-left: 50px;
-  }
+@media only screen and (max-width: 1920px){
+    .item-box-of-2 > div{
+        margin-right: 50px;
+        margin-left: 50px;
+    
+        
+    }
 }
 
-@media only screen and (max-width: 1145px) {
-  .item-box-of-2 > div {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
+@media only screen and (max-width: 1444px){
+    .hero-text-box h1{
+        font-size: 290%;
+
+    }
+
+    .hero-text-box{
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 1289px){
+    .hero-text-box h1{
+        font-size: 250%;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 1145px){
+    .item-box-of-2 > div{
+        margin-right: 20px;
+        margin-left: 20px;
+    
+        
+    }
+}
+
+@media only screen and (max-width: 1122px){
+    .hero-text-box h1{
+        font-size: 225%;
+
+    }
+
 }
 
 /* ipad pro  */
-@media only screen and (max-width: 1024px) {
-  .hero-text-box h1 {
-    font-size: 225%;
-  }
+@media only screen and (max-width: 1024px){
 
-  .main-nav {
-    margin-right: 18%;
-    font-size: 125%;
-  }
+    .hero-text-box h1{
+        font-size: 225%;
 
-  h2 {
-    font-size: 225%;
-  }
+    }
 
-  .grid-container {
-    /* margin: auto; */
-    margin-right: -300px;
+    .main-nav{
+        margin-right: 18%;
+        font-size: 125%;
+    }
 
-    display: inline-grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    border: 8px solid rgb(124, 71, 3);
-    /* grid-auto-rows: auto; */
-  }
+    h2{
+        font-size: 225%;
+    }
 
-  .grid-item {
-    width: 96%;
-    height: 96%;
-    border: 2px ridge rgb(119, 74, 32);
-    /* background-image: url(/img/bed-section-2.png);
+    
+
+    .grid-container {
+        /* margin: auto; */
+        margin-right:-300px;
+        
+        display: inline-grid;
+        /* grid-template-columns: repeat(3, 1fr); */
+        border: 8px solid rgb(124, 71, 3);
+        /* grid-auto-rows: auto; */
+      }
+
+    .grid-item{
+        width: 96%;
+        height: 96%;
+        border: 2px ridge rgb(119, 74, 32);
+        /* background-image: url(/img/bed-section-2.png);
         background-size: 75% 50%; */
-    transform: scale(1);
-    transition: transform 0.5s, opacity 0.5s;
-  }
+        transform: scale(1);
+        transition: transform 0.5s, opacity .5s;
+    }
 
-  .form {
-    display: none;
-  }
+    .form{
+        display: none;
+    }
+
+    
 }
 
-@media only screen and (max-width: 1016px) {
-  .grid-container {
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 75px 75px;
-  }
+@media only screen and (max-width: 1016px){
+    .grid-container{
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 75px 75px;
+    }
+    
 }
 
-@media only screen and (max-width: 768px) {
-  .hero-text-box h1 {
-    font-size: 150%;
-    padding-bottom: 5%;
-  }
-  .hero-text-box {
-    margin-top: 10%;
-  }
+@media only screen and (max-width: 768px){
+    .hero-text-box h1{
+        font-size: 150%;
+        padding-bottom: 5%;
 
-  h2 {
-    font-size: 200%;
-  }
-  .main-nav {
-    margin-right: 14%;
-    font-size: 100%;
-  }
+    }
+    .hero-text-box{
+        margin-top: 10%;
+    }
 
-  .photo {
-    height: auto;
-    max-height: 75%;
-    width: 100%;
-  }
+    h2{
+       font-size: 200%; 
+    }
+    .main-nav{
+        margin-right: 14%;
+        font-size: 100%;
+    }
+
+    .photo {
+        height: auto;
+        max-height: 75%;
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 716px) {
-  .grid-container {
-    grid-template-columns: 80px 80px 80px;
-    grid-template-rows: 65px 65px;
-  }
+@media only screen and (max-width: 716px){
+    .grid-container{
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 65px 65px;
+    }
 }
 
-@media only screen and (max-width: 596px) {
-  .grid-container {
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 50px 50px;
-  }
+@media only screen and (max-width: 596px){
+    .grid-container{
+        grid-template-columns: 60px 60px 60px;
+        grid-template-rows: 50px 50px;
+    }
 }
 
-@media only screen and (max-width: 540px) {
-  .main-nav {
-    font-size: 65%;
-  }
 
-  .hero-text-box h1 {
-    font-size: 110%;
-    padding-bottom: 6%;
-  }
+@media only screen and (max-width: 540px){
+    .main-nav{
+        font-size: 65%;
+    }
 
-  h2 {
-    font-size: 150%;
-  }
+    .hero-text-box h1{
+        font-size: 110%;
+        padding-bottom: 6%;
+    }
 
-  .grid-container {
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 50px 50px;
-  }
+    h2{
+        font-size: 150%;
+    }
+
+    .grid-container{
+        grid-template-columns: 60px 60px 60px;
+        grid-template-rows: 50px 50px;
+    }
+
+
 }
 
-@media only screen and (max-width: 476px) {
-  .grid-container {
-    grid-template-columns: 50px 50px 50px;
-    grid-template-rows: 40px 40px;
-  }
+@media only screen and (max-width: 476px){
+    .grid-container{
+        grid-template-columns: 50px 50px 50px;
+        grid-template-rows: 40px 40px;
+    }
 }
 
-@media only screen and (max-width: 416px) {
-  .main-nav {
-    font-size: 45%;
-  }
+@media only screen and (max-width: 416px){
+    .main-nav{
+        font-size: 45%;
+    
+    }
 
-  .hero-text-box h1 {
-    font-size: 75%;
-    padding-bottom: 8%;
-  }
+    .hero-text-box h1{
+        font-size: 75%;
+        padding-bottom: 8%;
+    }
 
-  h2 {
-    font-size: 95%;
-  }
+    h2{
+        font-size: 95%;
+    }
 
-  header {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.288),
-        rgba(0, 0, 0, 0.863)
-      ),
-      url(img/greenhouse-main.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    width: 100%;
-    height: 100vh; /*1 100vh is 100% of the viewport */
-    background-attachment: scroll;
-  }
 
-  .grid-container {
-    grid-template-columns: 45px 45px 45px;
-    grid-template-rows: 35px 35px;
-  }
+
+    header{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.863)), url(img/greenhouse-main.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        width: 100%;
+        height: 100vh; /*1 100vh is 100% of the viewport */
+        background-attachment: scroll;
+    }
+
+    .grid-container{
+        grid-template-columns: 45px 45px 45px;
+        grid-template-rows: 35px 35px;
+    }
+
 }
 
-@media only screen and (max-width: 411px) {
-  .item-box-of-2 > div {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
+@media only screen and (max-width: 411px){
+    .item-box-of-2 > div{
+        margin-right: 15px;
+        margin-left: 15px;
+    
+        
+    }
 }
 
-@media only screen and (max-width: 396px) {
-  .grid-container {
-    grid-template-columns: 40px 40px 40px;
-    grid-template-rows: 30px 30px;
-    border: 6px solid rgb(124, 71, 3);
-  }
+@media only screen and (max-width: 396px){
+    .grid-container{
+        grid-template-columns: 40px 40px 40px;
+        grid-template-rows: 30px 30px;
+        border:6px solid rgb(124, 71, 3);
+    }
+
 }
 
-@media only screen and (max-width: 375px) {
-  .main-nav {
-    font-size: 40%;
-  }
+@media only screen and (max-width: 375px){
+    .main-nav{
+        font-size: 40%;
+    
+    }
 
-  header {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.288),
-        rgba(0, 0, 0, 0.863)
-      ),
-      url(img/greenhouse-main.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    width: 100%;
-    height: 100vh; /*1 100vh is 100% of the viewport */
-    background-attachment: scroll;
-  }
+    header{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.863)), url(img/greenhouse-main.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        width: 100%;
+        height: 100vh; /*1 100vh is 100% of the viewport */
+        background-attachment: scroll;
+    }
 
-  .grid-container {
-    grid-template-columns: 40px 40px 40px;
-    grid-template-rows: 30px 30px;
-    border: 6px solid rgb(124, 71, 3);
-  }
+    .grid-container{
+        grid-template-columns: 40px 40px 40px;
+        grid-template-rows: 30px 30px;
+        border:6px solid rgb(124, 71, 3);
+    }
 
-  .item-box-of-2 {
-    padding-top: 5%;
-  }
+    .item-box-of-2{
+        padding-top: 5%;
+    }
+    
+
 }
 
-@media only screen and (max-width: 360px) {
-  .main-nav {
-    font-size: 35%;
-  }
+@media only screen and (max-width: 360px){
+    .main-nav{
+        font-size: 35%;
+    }
 
-  .hero-text-box h1 {
-    font-size: 70%;
-  }
+    .hero-text-box h1{
+        font-size: 70%;
+    }
 
-  .hero-text-box {
-    margin-top: 20%;
-  }
+    .hero-text-box{
+        margin-top: 20%;
+    }
 }
 
-@media only screen and (max-width: 328px) {
-  .grid-container {
-    grid-template-columns: 30px 30px 30px;
-    grid-template-rows: 20px 20px;
-    border: 5px solid rgb(124, 71, 3);
-  }
+@media only screen and (max-width: 328px){
+    .grid-container{
+        grid-template-columns: 30px 30px 30px;
+        grid-template-rows: 20px 20px;
+        border:5px solid rgb(124, 71, 3);
+    }
+
 }
 
-@media only screen and (max-width: 320px) {
-  .main-nav {
-    font-size: 30%;
-  }
-  .hero-text-box h1 {
-    font-size: 60%;
-  }
-  .hero-text-box {
-    margin-top: 25%;
-  }
+@media only screen and (max-width: 320px){
+    .main-nav{
+        font-size: 30%;
+    }
+    .hero-text-box h1{
+        font-size: 60%;
+    }
+    .hero-text-box{
+        margin-top: 25%;
+    }
+
+
+
 }
 
-@media only screen and (max-width: 280px) {
-  .main-nav {
-    font-size: 25%;
-  }
+@media only screen and (max-width: 280px){
+    .main-nav{
+        font-size: 25%;
+    }
 
-  .hero-text-box h1 {
-    font-size: 50%;
-    padding-bottom: 10%;
-  }
+    .hero-text-box h1{
+        font-size: 50%;
+        padding-bottom: 10%;
+    }
 
-  .grid-container {
-    /* margin: auto; */
-    margin-right: -125px;
+    .grid-container {
+        /* margin: auto; */
+        margin-right: -125px;
+        
+        display: inline-grid;
+        /* grid-template-columns: repeat(3, 1fr); */
+        border: 3px solid rgb(124, 71, 3);
+        /* grid-auto-rows: auto; */
+      }
 
-    display: inline-grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    border: 3px solid rgb(124, 71, 3);
-    /* grid-auto-rows: auto; */
-  }
-
-  .grid-item {
-    width: 88%;
-    height: 88%;
-    border: 2px ridge rgb(119, 74, 32);
-    /* background-image: url(/img/bed-section-2.png);
+    .grid-item{
+        width: 88%;
+        height: 88%;
+        border: 2px ridge rgb(119, 74, 32);
+        /* background-image: url(/img/bed-section-2.png);
         background-size: 75% 50%; */
-    transform: scale(1);
-    transition: transform 0.5s, opacity 0.5s;
-  }
+        transform: scale(1);
+        transition: transform 0.5s, opacity .5s;
+    }
+
+    
+
 }
 
 /***************************/
