@@ -32,6 +32,8 @@
     }
 }
 
+
+
 @media only screen and (max-width: 1289px){
     .hero-text-box h1{
         font-size: 250%;
@@ -345,7 +347,6 @@
     .hero-text-box h1{
         font-size: 50%;
     }
-
     .main-nav{
         font-size: 20%;
     }
