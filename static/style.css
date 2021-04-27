@@ -103,16 +103,16 @@ h2{
     margin-top: -120px;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    text-decoration: underline;
 }
 
-.break{
-    padding: 200px 0px;
-}
 
 h3{
-    font-size: 110%;
+    font-size: 300%;
     margin-bottom: 15px;
-    
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: 1%;
 }
 
 .main-nav{
@@ -146,22 +146,25 @@ h3{
     
 }
 
-.front, .back, .about{
+.front, .back, .about, .outside{
     background-color: #465743;
 }
 
 .about{
     color:white;
-    padding-top: 10%;
+
+    padding-top: 3%;
+
 }
 
 .about p{
-    justify-content: center;
+    /* justify-content: center; */
     text-align:center;
     margin-right: 10%;
     margin-left: 10%;
-    margin-top: 2%;
-    font-size: 125%;
+    /* margin-top: 5%; */
+    
+    font-size: 150%;
     
 }
 
@@ -275,3 +278,39 @@ h3{
     transform: scale(1);
     
 }
+
+.grid-container-outside {
+    display: inline-grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 100px 100px;
+    grid-gap: 0px;
+    border:10px solid rgb(124, 71, 3);
+    
+  }
+  
+  .grid-container-outside > * {
+    border: 2px ridge rgb(119, 74, 32);
+    background-color: rgba(177,152,122,255);
+    transform: scale(1);
+    transition: transform 0.5s, opacity .5s;
+  }
+
+  .grid-item-outside:hover {
+    opacity: .75;
+    transform: scale(1);
+    
+}
+
+
+.rectangle {
+    height: 75px;
+    width: 500px;
+    background-color: gray;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 300%;
+    color: white;
+    text-decoration: underline;
+  }
+  
+  
