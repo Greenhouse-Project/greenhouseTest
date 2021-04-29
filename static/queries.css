@@ -1,6 +1,6 @@
-/***************************/
-/*          WIDTHS         */
-/***************************/
+/* THIS FILE ADJUSTS VARIOUS ASPECTS OF THE STYLE OF THE WEBPAGE BASED ON THE SIZE OF THE SCREEN. IT, AND OTHERS THAT HAVE THE WORD "QUERIES" ARE USED TO MAKE SURE 
+THAT THE WEB PAGE LOOKS GOOD ON MOBILE PHONES, TABLETS, AND PCS ALIKE. PLEASE REFERENCE STYLE.CSS FOR MORE INFORMATION ABOUT STYLING THE HTML */
+
 
 @media only screen and (max-width: 2560px){
     .hero-text-box{
@@ -386,19 +386,3 @@
 
 }
 
-/***************************/
-/*          HEIGHTS        */
-/***************************/
-/* @media only screen and (max-height: 812px){
-    .hero-text-box{
-        width: 25%;
-    }
-    
-    .hero-text-box h1{
-        font-size: 50%;
-    }
-
-    .main-nav{
-        font-size: 20%;
-    }
-} */
