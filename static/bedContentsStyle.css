@@ -1,3 +1,5 @@
+/* See bed-contents.html for information on all classes. */
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +17,7 @@ html {
 }
 
 body {
-  padding: 1.7em;
+  padding: 1.7em; /* This is padding in inches */
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 6%;
@@ -45,7 +47,7 @@ button {
   background-color: #226924;
   width: 100%;
   font-size: x-large;
-  border-radius: 10px;
+  border-radius: 10px; /*Border radius allows for curved edges on boxes*/
   height: 50px;
 }
 
